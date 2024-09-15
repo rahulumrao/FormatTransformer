@@ -86,7 +86,7 @@ def xyz_to_espresso(trajectory_file, cell, pseudo_dir):
     print("=============================================================")
     print(f' Working directory : {prefix_path}')
     print(f' Reading file : {trajectory_file}')
-    print(f' Box dimenstions : A = {cell[0,0]}, B = {cell[1,1]}, C = {cell[2,2]}')
+    print(f' Box dimensions : A = {cell[0,0]}, B = {cell[1,1]}, C = {cell[2,2]}')
     print("=============================================================")
 
 #    # Create cell vectors from A, B, C

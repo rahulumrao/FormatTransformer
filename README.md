@@ -70,7 +70,7 @@ Centered structure saved in centered_trajec.xyz wihtin periodic box 12.0
 Converting to VASP POSCAR format...
 =============================================================
  Reading file : centered_trajec.xyz
- Box dimenstions : A = 12.0, B = 12.0, C = 12.0
+ Box dimensions : A = 12.0, B = 12.0, C = 12.0
 =============================================================
 100%|███████████████████████████████████████████████████████████████████████| 99/99 [00:00<00:00, 4407.79it/s]
 POSCAR files written in directory, poscar_files.
@@ -82,7 +82,7 @@ POSCAR files written in directory, poscar_files.
 Converting to VASP POSCAR format...
 =============================================================
  Reading file : centered_trajec.xyz
- Box dimenstions : A = 12.0, B = 13.0, C = 11.0
+ Box dimensions : A = 12.0, B = 13.0, C = 11.0
 =============================================================
 100%|███████████████████████████████████████████████████████████████████████| 99/99 [00:00<00:00, 5886.62it/s]
 POSCAR files written in directory, poscar_files.
