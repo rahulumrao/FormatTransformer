@@ -1,7 +1,6 @@
 # FormatTransformer
 
-**FormatTransformer** is a tool which center molecular structures within a periodic boundary condition (PBC) and convert XYZ structures to VASP (POSCAR) or Quantum Espresso (QE) Input files.
-
+**FormatTransformer** is a tool which move molecular structures (trajectory) within the periodic box and convert XYZ trajectories to VASP (POSCAR) or Quantum Espresso (QE) Input files.
 
 ## Installation
 
@@ -85,3 +84,10 @@ Converting to VASP POSCAR format...
 100%|███████████████████████████████████████████████████████████████████████| 99/99 [00:00<00:00, 5886.62it/s]
 POSCAR files written in directory, poscar_files.
 ```
+![FormatTransformer Demo](usage.gif)
+
+## AUTHOR
+RAHUL VERMA \
+Department of Chemical and Biomolecular Engineering \
+NC State University, USA \
+Email: rverma7@ncsu.edu
