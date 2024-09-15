@@ -1,23 +1,41 @@
 # FormatTransformer
-# Convert XYZ structure to VASP/QE Input files
 
-## How to
+**FormatTransformer** is a tool which center molecular structures within a periodic boundary condition (PBC) and convert XYZ structures to VASP (POSCAR) or Quantum Espresso (QE) Input files.
 
-### Download :
 
-```bash
-git clone
-```
+## Installation
 
-### Install :
+Clone repository and install package:
 
 ```bash
-cd format_transformer
-
+git clone git@github.com:rahulumrao/FormatTransformer.git
+cd FormatTransformer
 pip install .
 ```
+## Usage
 
-### Run :
+`xyzcenter` - center molecular structure at the center of box
+
+```bash
+❯ xyzcenter -h
+
+usage: xyzcenter [-h] [-i INPUT] [-o OUTPUT] [-b BOX_SIZE]
+
+Center molecular structure within PBC
+
+options:
+  -h, --help            Show this help message and exit
+  -i INPUT, --input INPUT
+                        Input XYZ trajectory file
+  -o OUTPUT, --output OUTPUT
+                        Output XYZ trajectory file
+  -b BOX_SIZE, --box_size BOX_SIZE
+                        Box size in Å (default: 15.0)
+
+```
+
+`xyzconverter` - Convert XYZ to VASP (POSCAR) or Quantum Espresso input files
+
 
 ```bash
 ❯ xyzconverter -h
@@ -27,7 +45,7 @@ usage: xyzconverter [-h] [-i INPUT] [-b BOX_SIZE [BOX_SIZE ...]] -o {VASP,QE} [-
 Convert XYZ to VASP POSCAR or Quantum Espresso input files
 
 options:
-  -h, --help            show this help message and exit
+  -h, --help            Show this help message and exit
   -i INPUT, --input INPUT
                         Input XYZ file containing multiple frames
   -b BOX_SIZE [BOX_SIZE ...], --box_size BOX_SIZE [BOX_SIZE ...]
@@ -35,21 +53,35 @@ options:
   -o {VASP,QE}, --output_type {VASP,QE}
                         Specify the output format: VASP or QE
   -pp PSEUDO, --pseudo PSEUDO
-                        PseudoPotentials directory (required for Espresso)
+                        PseudoPotentials directory (required for Quantum Espresso)
+```
+## Examples
+```bash
+❯ xyzcenter -i trajec.xyz -o centered_trajec.xyz -b 12.0
+==============================
+Reading... trajec.xyz
+==============================
+Centered structure saved in centered_trajec.xyz wihtin periodic box 12.0
 ```
 
 ```bash
-❯ xyzcenter -h
-usage: xyzcenter [-h] [-i INPUT] [-o OUTPUT] [-b BOX_SIZE]
+❯ xyzconverter -i centered_trajec.xyz -o VASP -b 12.0
 
-Center molecular structure within PBC
+Converting to VASP POSCAR format...
+=============================================================
+ Reading file : centered_trajec.xyz
+ Box dimenstions : A = 12.0, B = 12.0, C = 12.0
+=============================================================
+100%|███████████████████████████████████████████████████████████████████████| 99/99 [00:00<00:00, 4407.79it/s]
+POSCAR files written in directory, poscar_files.
 
-options:
-  -h, --help            show this help message and exit
-  -i INPUT, --input INPUT
-                        Input XYZ trajectory file
-  -o OUTPUT, --output OUTPUT
-                        Output XYZ trajectory file
-  -b BOX_SIZE, --box_size BOX_SIZE
-                        Box size in Ang. (default: 15.0)
+❯ xyzconverter -i centered_trajec.xyz -o VASP -b 12 13 11
+
+Converting to VASP POSCAR format...
+=============================================================
+ Reading file : centered_trajec.xyz
+ Box dimenstions : A = 12.0, B = 13.0, C = 11.0
+=============================================================
+100%|███████████████████████████████████████████████████████████████████████| 99/99 [00:00<00:00, 5886.62it/s]
+POSCAR files written in directory, poscar_files.
 ```
