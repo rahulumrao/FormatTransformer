@@ -55,17 +55,18 @@ options:
                         PseudoPotentials directory (required for Quantum Espresso)
 ```
 ## Examples
-```bash
-❯ xyzcenter -i trajec.xyz -o centered_trajec.xyz -b 12.0
+
+`❯ xyzcenter -i trajec.xyz -o centered_trajec.xyz -b 12.0`
+```
 ==============================
 Reading... trajec.xyz
 ==============================
 Centered structure saved in centered_trajec.xyz wihtin periodic box 12.0
 ```
 
-```bash
-❯ xyzconverter -i centered_trajec.xyz -o VASP -b 12.0
+`❯ xyzconverter -i centered_trajec.xyz -o VASP -b 12.0`
 
+```bash
 Converting to VASP POSCAR format...
 =============================================================
  Reading file : centered_trajec.xyz
@@ -73,9 +74,11 @@ Converting to VASP POSCAR format...
 =============================================================
 100%|███████████████████████████████████████████████████████████████████████| 99/99 [00:00<00:00, 4407.79it/s]
 POSCAR files written in directory, poscar_files.
+```
 
-❯ xyzconverter -i centered_trajec.xyz -o VASP -b 12 13 11
+`❯ xyzconverter -i centered_trajec.xyz -o VASP -b 12 13 11`
 
+```bash
 Converting to VASP POSCAR format...
 =============================================================
  Reading file : centered_trajec.xyz
