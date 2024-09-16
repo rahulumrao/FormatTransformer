@@ -89,8 +89,8 @@ POSCAR files written in directory, poscar_files.
 ```
 ![FormatTransformer Demo](usage.gif)
 
-## AUTHOR
+## AUTHOR:
 RAHUL VERMA \
 Department of Chemical and Biomolecular Engineering \
-NC State University, USA \
+NC State University, Raleigh, USA \
 Email: rverma7@ncsu.edu
