@@ -1,6 +1,6 @@
 # FormatTransformer
 
-**FormatTransformer** is a tool which move molecular structures (trajectory) within the periodic box and convert XYZ trajectories to VASP (POSCAR) or Quantum Espresso (QE) Input files.
+The package **FormatTransformer** move molecular structure (single frame or trajectory) within the periodic box and convert XYZ trajectories to VASP (POSCAR) or Quantum Espresso (QE) Input files.
 
 ## Installation
 
@@ -13,7 +13,7 @@ pip install .
 ```
 ## Usage
 
-`xyzcenter` - center molecular structure at the center of box
+`xyzcenter` - shift molecule at the center of box
 
 ```bash
 ❯ xyzcenter -h
@@ -33,7 +33,7 @@ options:
 
 ```
 
-`xyzconverter` - Convert XYZ to VASP (POSCAR) or Quantum Espresso input files
+`xyzconverter` - Convert XYZ (cartesian) to VASP (POSCAR) or Quantum Espresso input files
 
 
 ```bash
